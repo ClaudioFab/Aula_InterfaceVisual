@@ -1,6 +1,8 @@
 
 package aula_interfacevisual;
 
+import javax.swing.JOptionPane;
+
 public class Calculadora extends javax.swing.JFrame {
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(Calculadora.class.getName());
@@ -48,6 +50,7 @@ public class Calculadora extends javax.swing.JFrame {
         txfNumero1.setBackground(new java.awt.Color(0, 0, 0));
         txfNumero1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         txfNumero1.setForeground(new java.awt.Color(255, 255, 255));
+        txfNumero1.addActionListener(this::txfNumero1ActionPerformed);
 
         txfNumero2.setBackground(new java.awt.Color(0, 0, 0));
         txfNumero2.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
@@ -177,32 +180,60 @@ public class Calculadora extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jbMultiplicarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbMultiplicarActionPerformed
-        //Exemplo para lembrar.
+        //Exemplo com variaveis para lembrar.
         String num1Str = txfNumero1.getText();
         String num2Str = txfNumero2.getText();
-        double n1 = Double.parseDouble(num1Str);
-        double n2 = Double.parseDouble(num2Str);
-        double total = n1*n2;
-        String result = String.valueOf(total);
-        txfResultado.setText(result);
+        try {
+            double n1 = Double.parseDouble(num1Str);
+            double n2 = Double.parseDouble(num2Str);
+            double total = n1*n2;
+            String result = String.valueOf(total);
+            txfResultado.setText(result);
+        } catch (Exception e) {
+            txfNumero1.setText("");
+            txfNumero2.setText("");
+            txfResultado.setText("");
+            JOptionPane.showMessageDialog(null,"Entrada inválida!\nUtilize apenas Números!","Erro",JOptionPane.ERROR_MESSAGE);
+        }
     }//GEN-LAST:event_jbMultiplicarActionPerformed
 
     private void jbSubtrairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbSubtrairActionPerformed
-        double n1 = Double.parseDouble(txfNumero1.getText());
-        double n2 = Double.parseDouble(txfNumero2.getText());
-        txfResultado.setText(String.valueOf(n1-n2));
+        try {
+            double n1 = Double.parseDouble(txfNumero1.getText());
+            double n2 = Double.parseDouble(txfNumero2.getText());
+            txfResultado.setText(String.valueOf(n1-n2));            
+        } catch (Exception e) {
+            txfNumero1.setText("");
+            txfNumero2.setText("");
+            txfResultado.setText("");
+            JOptionPane.showMessageDialog(null,"Entrada inválida!\nUtilize apenas Números!","Erro",JOptionPane.ERROR_MESSAGE);
+        }
     }//GEN-LAST:event_jbSubtrairActionPerformed
 
     private void jbDividirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbDividirActionPerformed
-        double n1 = Double.parseDouble(txfNumero1.getText());
-        double n2 = Double.parseDouble(txfNumero2.getText());
-        txfResultado.setText(String.valueOf(n1/n2));
+        try {
+            double n1 = Double.parseDouble(txfNumero1.getText());
+            double n2 = Double.parseDouble(txfNumero2.getText());
+            txfResultado.setText(String.valueOf(n1/n2));            
+        } catch (Exception e) {
+            txfNumero1.setText("");
+            txfNumero2.setText("");
+            txfResultado.setText("");
+            JOptionPane.showMessageDialog(null,"Entrada inválida!\nUtilize apenas Números!","Erro",JOptionPane.ERROR_MESSAGE);
+        }
     }//GEN-LAST:event_jbDividirActionPerformed
 
     private void jbSomarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbSomarActionPerformed
-        double n1 = Double.parseDouble(txfNumero1.getText());
-        double n2 = Double.parseDouble(txfNumero2.getText());
-        txfResultado.setText(String.valueOf(n1+n2));
+        try {
+            double n1 = Double.parseDouble(txfNumero1.getText());
+            double n2 = Double.parseDouble(txfNumero2.getText());
+            txfResultado.setText(String.valueOf(n1+n2));            
+        } catch (Exception e) {
+            txfNumero1.setText("");
+            txfNumero2.setText("");
+            txfResultado.setText("");
+            JOptionPane.showMessageDialog(null,"Entrada inválida!\nUtilize apenas Números!","Erro",JOptionPane.ERROR_MESSAGE);
+        }
     }//GEN-LAST:event_jbSomarActionPerformed
 
     private void jbLimparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbLimparActionPerformed
@@ -210,6 +241,10 @@ public class Calculadora extends javax.swing.JFrame {
         txfNumero2.setText("");
         txfResultado.setText("");
     }//GEN-LAST:event_jbLimparActionPerformed
+
+    private void txfNumero1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txfNumero1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txfNumero1ActionPerformed
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
