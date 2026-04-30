@@ -10,6 +10,38 @@ public class Calculadora extends javax.swing.JFrame {
     public Calculadora() {
         initComponents();
     }
+    
+    public void calculando(String operante){
+        try {
+            //double n1 = Double.parseDouble(txfNumero1.getText());
+            //double n2 = Double.parseDouble(txfNumero2.getText());
+            String valor;
+            switch (operante) {
+                case "+":
+                    valor = "n1+n2";
+                    break;
+                case "-":
+                    valor = "n1-n2";
+                    break;
+                case "*":
+                    valor = "n1*n2";
+                    break;
+                case "/":
+                    valor = "n1/n2";
+                    break;
+                default:
+                    JOptionPane.showMessageDialog(null,"Entrada inválida!","Erro",JOptionPane.ERROR_MESSAGE);
+                    throw new AssertionError();
+            }
+            txfResultado.setText(String.valueOf(valor));           
+        } catch (Exception e) {
+            txfNumero1.setText("");
+            txfNumero2.setText("");
+            txfResultado.setText("");
+            JOptionPane.showMessageDialog(null,"Entrada inválida!\nUtilize apenas Números!","Erro",JOptionPane.ERROR_MESSAGE);
+        }
+   
+    }
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -180,60 +212,19 @@ public class Calculadora extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jbMultiplicarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbMultiplicarActionPerformed
-        //Exemplo com variaveis para lembrar.
-        String num1Str = txfNumero1.getText();
-        String num2Str = txfNumero2.getText();
-        try {
-            double n1 = Double.parseDouble(num1Str);
-            double n2 = Double.parseDouble(num2Str);
-            double total = n1*n2;
-            String result = String.valueOf(total);
-            txfResultado.setText(result);
-        } catch (Exception e) {
-            txfNumero1.setText("");
-            txfNumero2.setText("");
-            txfResultado.setText("");
-            JOptionPane.showMessageDialog(null,"Entrada inválida!\nUtilize apenas Números!","Erro",JOptionPane.ERROR_MESSAGE);
-        }
+        calculando("*");
     }//GEN-LAST:event_jbMultiplicarActionPerformed
 
     private void jbSubtrairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbSubtrairActionPerformed
-        try {
-            double n1 = Double.parseDouble(txfNumero1.getText());
-            double n2 = Double.parseDouble(txfNumero2.getText());
-            txfResultado.setText(String.valueOf(n1-n2));            
-        } catch (Exception e) {
-            txfNumero1.setText("");
-            txfNumero2.setText("");
-            txfResultado.setText("");
-            JOptionPane.showMessageDialog(null,"Entrada inválida!\nUtilize apenas Números!","Erro",JOptionPane.ERROR_MESSAGE);
-        }
+        calculando("-");
     }//GEN-LAST:event_jbSubtrairActionPerformed
 
     private void jbDividirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbDividirActionPerformed
-        try {
-            double n1 = Double.parseDouble(txfNumero1.getText());
-            double n2 = Double.parseDouble(txfNumero2.getText());
-            txfResultado.setText(String.valueOf(n1/n2));            
-        } catch (Exception e) {
-            txfNumero1.setText("");
-            txfNumero2.setText("");
-            txfResultado.setText("");
-            JOptionPane.showMessageDialog(null,"Entrada inválida!\nUtilize apenas Números!","Erro",JOptionPane.ERROR_MESSAGE);
-        }
+        calculando("/");
     }//GEN-LAST:event_jbDividirActionPerformed
 
     private void jbSomarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbSomarActionPerformed
-        try {
-            double n1 = Double.parseDouble(txfNumero1.getText());
-            double n2 = Double.parseDouble(txfNumero2.getText());
-            txfResultado.setText(String.valueOf(n1+n2));            
-        } catch (Exception e) {
-            txfNumero1.setText("");
-            txfNumero2.setText("");
-            txfResultado.setText("");
-            JOptionPane.showMessageDialog(null,"Entrada inválida!\nUtilize apenas Números!","Erro",JOptionPane.ERROR_MESSAGE);
-        }
+        calculando("+");
     }//GEN-LAST:event_jbSomarActionPerformed
 
     private void jbLimparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbLimparActionPerformed
