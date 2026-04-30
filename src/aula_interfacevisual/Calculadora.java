@@ -12,10 +12,10 @@ public class Calculadora extends javax.swing.JFrame {
     }
     
     public void calculando(String operante){
+        String valor;
         try {
             //double n1 = Double.parseDouble(txfNumero1.getText());
             //double n2 = Double.parseDouble(txfNumero2.getText());
-            String valor;
             switch (operante) {
                 case "+":
                     valor = "n1+n2";
@@ -40,7 +40,6 @@ public class Calculadora extends javax.swing.JFrame {
             txfResultado.setText("");
             JOptionPane.showMessageDialog(null,"Entrada inválida!\nUtilize apenas Números!","Erro",JOptionPane.ERROR_MESSAGE);
         }
-   
     }
 
     @SuppressWarnings("unchecked")
@@ -61,7 +60,8 @@ public class Calculadora extends javax.swing.JFrame {
         jbMultiplicar = new javax.swing.JButton();
         jbLimpar = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Calculadora");
 
         jPanel1.setBackground(new java.awt.Color(102, 0, 0));
         jPanel1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -209,6 +209,7 @@ public class Calculadora extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jbMultiplicarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbMultiplicarActionPerformed
