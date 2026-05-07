@@ -36,6 +36,7 @@ public class Medidor extends javax.swing.JFrame {
         jLabelNomeMedidor.setBackground(new java.awt.Color(0, 0, 0));
         jLabelNomeMedidor.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabelNomeMedidor.setForeground(new java.awt.Color(255, 255, 255));
+        jLabelNomeMedidor.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabelNomeMedidor.setText("Medidor");
 
         jLabelLado1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
@@ -85,39 +86,39 @@ public class Medidor extends javax.swing.JFrame {
             jPainelMedidorVermLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPainelMedidorVermLayout.createSequentialGroup()
                 .addGroup(jPainelMedidorVermLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPainelMedidorVermLayout.createSequentialGroup()
-                        .addGap(159, 159, 159)
-                        .addComponent(jLabelNomeMedidor))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPainelMedidorVermLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabelNomeMedidor, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(jPainelMedidorVermLayout.createSequentialGroup()
                         .addGap(46, 46, 46)
-                        .addGroup(jPainelMedidorVermLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPainelMedidorVermLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addGroup(jPainelMedidorVermLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jbLimparMedidor, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jbVerifica, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGroup(jPainelMedidorVermLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPainelMedidorVermLayout.createSequentialGroup()
+                        .addGroup(jPainelMedidorVermLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jbLimparMedidor, javax.swing.GroupLayout.PREFERRED_SIZE, 259, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jbVerifica, javax.swing.GroupLayout.PREFERRED_SIZE, 259, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPainelMedidorVermLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(jPainelMedidorVermLayout.createSequentialGroup()
+                                    .addGap(90, 90, 90)
+                                    .addComponent(jLabelResultado, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(jPainelMedidorVermLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPainelMedidorVermLayout.createSequentialGroup()
+                                        .addComponent(jLabelLado3)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(txfMedida3))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPainelMedidorVermLayout.createSequentialGroup()
                                         .addComponent(jLabelLado2)
                                         .addGap(18, 18, 18)
                                         .addComponent(txfMedida2))
-                                    .addGroup(jPainelMedidorVermLayout.createSequentialGroup()
-                                        .addComponent(jLabelLado3)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(txfMedida3, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(jPainelMedidorVermLayout.createSequentialGroup()
+                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPainelMedidorVermLayout.createSequentialGroup()
                                         .addComponent(jLabelLado1)
                                         .addGap(18, 18, 18)
-                                        .addComponent(txfMedida1))))
-                            .addGroup(jPainelMedidorVermLayout.createSequentialGroup()
-                                .addGap(90, 90, 90)
-                                .addComponent(jLabelResultado, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addContainerGap(112, Short.MAX_VALUE))
+                                        .addComponent(txfMedida1, javax.swing.GroupLayout.PREFERRED_SIZE, 256, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                        .addGap(0, 59, Short.MAX_VALUE)))
+                .addContainerGap())
         );
         jPainelMedidorVermLayout.setVerticalGroup(
             jPainelMedidorVermLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPainelMedidorVermLayout.createSequentialGroup()
-                .addGap(65, 65, 65)
-                .addComponent(jLabelNomeMedidor)
+                .addGap(42, 42, 42)
+                .addComponent(jLabelNomeMedidor, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(45, 45, 45)
                 .addGroup(jPainelMedidorVermLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabelLado1)
@@ -134,7 +135,7 @@ public class Medidor extends javax.swing.JFrame {
                 .addComponent(jbVerifica, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(24, 24, 24)
                 .addComponent(jbLimparMedidor, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 27, Short.MAX_VALUE)
                 .addComponent(jLabelResultado, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(41, 41, 41))
         );
@@ -143,17 +144,11 @@ public class Medidor extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPainelMedidorVerm, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(jPainelMedidorVerm, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPainelMedidorVerm, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(jPainelMedidorVerm, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();

@@ -17,9 +17,13 @@ public class Menu_iniciar extends javax.swing.JFrame {
         jbImgMedidor = new javax.swing.JButton();
         jLabelCalcula2 = new javax.swing.JLabel();
         jLabelMedidor2 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
         jMenuBarIniciar = new javax.swing.JMenuBar();
         jMenuFormulario = new javax.swing.JMenu();
-        jMenuICalcula = new javax.swing.JMenuItem();
+        jMenuCalculaGravitacional = new javax.swing.JMenuItem();
+        jMenuComboBox = new javax.swing.JMenuItem();
+        jMenuCalcula = new javax.swing.JMenuItem();
         jMenuMedidor = new javax.swing.JMenuItem();
         jMenuAjuda = new javax.swing.JMenu();
         jMenuSair = new javax.swing.JMenu();
@@ -49,40 +53,64 @@ public class Menu_iniciar extends javax.swing.JFrame {
         jLabelMedidor2.setForeground(new java.awt.Color(255, 255, 255));
         jLabelMedidor2.setText("Medidor");
 
+        jButton1.setBackground(new java.awt.Color(255, 255, 255));
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/icons8-caixa-50.png"))); // NOI18N
+        jButton1.addActionListener(this::jButton1ActionPerformed);
+
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setText("Combo Box");
+
         javax.swing.GroupLayout jPanelMenuVermLayout = new javax.swing.GroupLayout(jPanelMenuVerm);
         jPanelMenuVerm.setLayout(jPanelMenuVermLayout);
         jPanelMenuVermLayout.setHorizontalGroup(
             jPanelMenuVermLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelMenuVermLayout.createSequentialGroup()
-                .addGap(101, 101, 101)
+                .addGap(107, 107, 107)
                 .addGroup(jPanelMenuVermLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jbImgMedidor)
-                    .addComponent(jbImgCalculadora))
+                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jbImgMedidor, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jbImgCalculadora, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanelMenuVermLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabelCalcula2)
-                    .addComponent(jLabelMedidor2))
-                .addContainerGap(117, Short.MAX_VALUE))
+                    .addGroup(jPanelMenuVermLayout.createSequentialGroup()
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 12, Short.MAX_VALUE))
+                    .addComponent(jLabelCalcula2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabelMedidor2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(94, 94, 94))
         );
         jPanelMenuVermLayout.setVerticalGroup(
             jPanelMenuVermLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelMenuVermLayout.createSequentialGroup()
-                .addGap(126, 126, 126)
+                .addGap(107, 107, 107)
                 .addGroup(jPanelMenuVermLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jbImgCalculadora, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabelCalcula2, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(143, 143, 143)
+                    .addComponent(jbImgCalculadora, javax.swing.GroupLayout.DEFAULT_SIZE, 60, Short.MAX_VALUE)
+                    .addComponent(jLabelCalcula2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(69, 69, 69)
                 .addGroup(jPanelMenuVermLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jbImgMedidor, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabelMedidor2, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(171, Short.MAX_VALUE))
+                    .addComponent(jbImgMedidor, javax.swing.GroupLayout.DEFAULT_SIZE, 60, Short.MAX_VALUE)
+                    .addComponent(jLabelMedidor2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(63, 63, 63)
+                .addGroup(jPanelMenuVermLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, 60, Short.MAX_VALUE)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(154, Short.MAX_VALUE))
         );
 
         jMenuFormulario.setText("Formulários");
 
-        jMenuICalcula.setText("Calculadora");
-        jMenuICalcula.addActionListener(this::jMenuICalculaActionPerformed);
-        jMenuFormulario.add(jMenuICalcula);
+        jMenuCalculaGravitacional.setText("Calculadora Gravitacional");
+        jMenuCalculaGravitacional.addActionListener(this::jMenuCalculaGravitacionalActionPerformed);
+        jMenuFormulario.add(jMenuCalculaGravitacional);
+
+        jMenuComboBox.setText("Combo Box");
+        jMenuComboBox.addActionListener(this::jMenuComboBoxActionPerformed);
+        jMenuFormulario.add(jMenuComboBox);
+
+        jMenuCalcula.setText("Calculadora");
+        jMenuCalcula.addActionListener(this::jMenuCalculaActionPerformed);
+        jMenuFormulario.add(jMenuCalcula);
 
         jMenuMedidor.setText("Medidor");
         jMenuMedidor.addActionListener(this::jMenuMedidorActionPerformed);
@@ -107,26 +135,21 @@ public class Menu_iniciar extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanelMenuVerm, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(jPanelMenuVerm, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanelMenuVerm, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(jPanelMenuVerm, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jMenuICalculaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuICalculaActionPerformed
+    private void jMenuCalculaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuCalculaActionPerformed
         Calculadora c1 = new Calculadora();
         c1.setVisible(true);
-    }//GEN-LAST:event_jMenuICalculaActionPerformed
+    }//GEN-LAST:event_jMenuCalculaActionPerformed
 
     private void jMenuMedidorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuMedidorActionPerformed
         Medidor c1 = new Medidor();
@@ -147,6 +170,21 @@ public class Menu_iniciar extends javax.swing.JFrame {
         c1.setVisible(true);
     }//GEN-LAST:event_jbImgMedidorActionPerformed
 
+    private void jMenuComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuComboBoxActionPerformed
+        ComboBox c1 = new ComboBox();
+        c1.setVisible(true);
+    }//GEN-LAST:event_jMenuComboBoxActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        ComboBox c1 = new ComboBox();
+        c1.setVisible(true);
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jMenuCalculaGravitacionalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuCalculaGravitacionalActionPerformed
+        CalculaPeso c1 = new CalculaPeso();
+        c1.setVisible(true);
+    }//GEN-LAST:event_jMenuCalculaGravitacionalActionPerformed
+
     public static void main(String args[]) {
 
         try {
@@ -164,12 +202,16 @@ public class Menu_iniciar extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButton1;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabelCalcula2;
     private javax.swing.JLabel jLabelMedidor2;
     private javax.swing.JMenu jMenuAjuda;
     private javax.swing.JMenuBar jMenuBarIniciar;
+    private javax.swing.JMenuItem jMenuCalcula;
+    private javax.swing.JMenuItem jMenuCalculaGravitacional;
+    private javax.swing.JMenuItem jMenuComboBox;
     private javax.swing.JMenu jMenuFormulario;
-    private javax.swing.JMenuItem jMenuICalcula;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuMedidor;
     private javax.swing.JMenu jMenuSair;
