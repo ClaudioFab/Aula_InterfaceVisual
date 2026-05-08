@@ -1,11 +1,45 @@
 package aula_interfacevisual;
 
+import java.text.DecimalFormat;
+import javax.swing.JOptionPane;
+
 public class CalculaPeso extends javax.swing.JFrame {
 
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(CalculaPeso.class.getName());
 
     public CalculaPeso() {
         initComponents();
+    }
+    
+    public void respostaGravidade(double gravPlaneta){
+        String planetaSelecionado = jCBPlanetas.getSelectedItem().toString();
+        DecimalFormat df1 = new DecimalFormat("0.0");
+        double pesoTerra;
+        double pesoPlaneta;
+        if(txfPesoTerra.getText().isEmpty()){
+           JOptionPane.showMessageDialog(null,"Entrada inválida!\nDigite apenas números!","Erro",JOptionPane.ERROR_MESSAGE);
+           return;
+        }
+        try {
+            pesoTerra = Double.parseDouble(txfPesoTerra.getText());            
+            pesoPlaneta = (pesoTerra / 10) * gravPlaneta;
+            if(planetaSelecionado.equals("Terra")){
+                jLabelResposta.setText(String.valueOf("O seu peso na "+planetaSelecionado+" é: "+df1.format(pesoTerra)+" kg!"));
+                JOptionPane.showMessageDialog(null,"O seu peso na "+planetaSelecionado+" é: "+df1.format(pesoTerra)+" kg!",planetaSelecionado,JOptionPane.INFORMATION_MESSAGE);
+            }else if(planetaSelecionado.equals("Lua")){
+                jLabelResposta.setText(String.valueOf("O seu peso na "+planetaSelecionado+" é: "+df1.format(pesoPlaneta)+" kg!"));
+                JOptionPane.showMessageDialog(null,"O seu peso na "+planetaSelecionado+" é: "+df1.format(pesoPlaneta)+" kg!",planetaSelecionado,JOptionPane.INFORMATION_MESSAGE);
+            }else{
+                jLabelResposta.setText(String.valueOf("O seu peso em "+planetaSelecionado+" é: "+df1.format(pesoPlaneta)+" kg!"));
+                JOptionPane.showMessageDialog(null,"O seu peso em "+planetaSelecionado+" é: "+df1.format(pesoPlaneta)+" kg!",planetaSelecionado,JOptionPane.INFORMATION_MESSAGE);
+            }
+        } catch (Exception e) {
+            txfPesoTerra.setText("");
+            JOptionPane.showMessageDialog(null,"Entrada inválida!\nDigite apenas números!","Erro",JOptionPane.ERROR_MESSAGE);
+            return; 
+        }
+        txfPesoTerra.setText("");
+        
     }
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -15,7 +49,9 @@ public class CalculaPeso extends javax.swing.JFrame {
         jLabelCalculaGravit = new javax.swing.JLabel();
         jLabelNomePeso = new javax.swing.JLabel();
         txfPesoTerra = new javax.swing.JTextField();
-        jcbPlanetas = new javax.swing.JComboBox<>();
+        jCBPlanetas = new javax.swing.JComboBox<>();
+        jButtonCalculaPeso = new javax.swing.JButton();
+        jLabelResposta = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Calculadora Gravitacional");
@@ -36,10 +72,21 @@ public class CalculaPeso extends javax.swing.JFrame {
         txfPesoTerra.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         txfPesoTerra.setForeground(new java.awt.Color(255, 255, 255));
 
-        jcbPlanetas.setBackground(new java.awt.Color(0, 0, 0));
-        jcbPlanetas.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jcbPlanetas.setForeground(new java.awt.Color(255, 255, 255));
-        jcbPlanetas.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Mercúrio", "Vênus", "Terra", "Marte", "Júpiter", "Saturno", "Urano", "Netuno", "Lua", "(Plutão)" }));
+        jCBPlanetas.setBackground(new java.awt.Color(0, 0, 0));
+        jCBPlanetas.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jCBPlanetas.setForeground(new java.awt.Color(255, 255, 255));
+        jCBPlanetas.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Mercúrio", "Vênus", "Terra", "Marte", "Júpiter", "Saturno", "Urano", "Netuno", "Lua", "(Plutão)" }));
+
+        jButtonCalculaPeso.setBackground(new java.awt.Color(54, 47, 47));
+        jButtonCalculaPeso.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jButtonCalculaPeso.setForeground(new java.awt.Color(255, 255, 255));
+        jButtonCalculaPeso.setText("Calcular Peso");
+        jButtonCalculaPeso.addActionListener(this::jButtonCalculaPesoActionPerformed);
+
+        jLabelResposta.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabelResposta.setForeground(new java.awt.Color(255, 255, 255));
+        jLabelResposta.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabelResposta.setVerticalAlignment(javax.swing.SwingConstants.TOP);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -55,7 +102,9 @@ public class CalculaPeso extends javax.swing.JFrame {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jLabelNomePeso)
                             .addComponent(txfPesoTerra)
-                            .addComponent(jcbPlanetas, 0, 265, Short.MAX_VALUE))
+                            .addComponent(jCBPlanetas, 0, 265, Short.MAX_VALUE)
+                            .addComponent(jButtonCalculaPeso, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabelResposta, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
@@ -69,8 +118,12 @@ public class CalculaPeso extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(txfPesoTerra, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(47, 47, 47)
-                .addComponent(jcbPlanetas, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(273, Short.MAX_VALUE))
+                .addComponent(jCBPlanetas, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(47, 47, 47)
+                .addComponent(jButtonCalculaPeso, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 80, Short.MAX_VALUE)
+                .addComponent(jLabelResposta, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -88,6 +141,46 @@ public class CalculaPeso extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jButtonCalculaPesoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCalculaPesoActionPerformed
+        String planetaSelecionado = jCBPlanetas.getSelectedItem().toString();
+        double gravPlaneta=0.0;
+        switch(planetaSelecionado) {
+            case "Mercúrio":
+                gravPlaneta = 3.6;
+                break;            
+            case "Vênus":
+                gravPlaneta = 8.7;                
+                break;            
+            case "Terra":
+                gravPlaneta = 9.8;
+                break;            
+            case "Marte":
+                gravPlaneta = 3.7;
+                break;            
+            case "Júpiter":
+                gravPlaneta = 24.79;
+                break;            
+            case "Saturno":
+                gravPlaneta = 10.44;
+                break;            
+            case "Urano":
+                gravPlaneta = 8.69;
+                break;            
+            case "Netuno":
+                gravPlaneta = 11.15;
+                break;            
+            case "Lua":
+                gravPlaneta = 1.6;
+                break;            
+            case "(Plutão)":
+                gravPlaneta = 0.62;
+                break;            
+            default:
+                throw new AssertionError();
+        }
+        respostaGravidade(gravPlaneta);
+    }//GEN-LAST:event_jButtonCalculaPesoActionPerformed
+
     public static void main(String args[]) {
 
 
@@ -95,10 +188,12 @@ public class CalculaPeso extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButtonCalculaPeso;
+    private javax.swing.JComboBox<String> jCBPlanetas;
     private javax.swing.JLabel jLabelCalculaGravit;
     private javax.swing.JLabel jLabelNomePeso;
+    private javax.swing.JLabel jLabelResposta;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JComboBox<String> jcbPlanetas;
     private javax.swing.JTextField txfPesoTerra;
     // End of variables declaration//GEN-END:variables
 

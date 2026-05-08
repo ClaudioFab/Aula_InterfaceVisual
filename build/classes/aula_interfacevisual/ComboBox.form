@@ -63,17 +63,15 @@
                           <EmptySpace min="-2" pref="69" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
                               <Component id="jLabelProdutoSeleciona1" max="32767" attributes="0"/>
-                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <Component id="jbuttonSalvar" min="-2" pref="100" max="-2" attributes="0"/>
-                                      <EmptySpace max="32767" attributes="0"/>
-                                      <Component id="jButtonExcluir" min="-2" pref="100" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Component id="jcbProdutos" max="32767" attributes="0"/>
-                                  <Component id="txfProdutoSelecionado" max="32767" attributes="0"/>
-                                  <Component id="txfNovoProduto" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="jLabelProdutoSeleciona" alignment="0" max="32767" attributes="0"/>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Component id="jbuttonSalvar" min="-2" pref="100" max="-2" attributes="0"/>
+                                  <EmptySpace max="32767" attributes="0"/>
+                                  <Component id="jButtonExcluir" min="-2" pref="100" max="-2" attributes="0"/>
                               </Group>
+                              <Component id="jcbProdutos" max="32767" attributes="0"/>
+                              <Component id="txfProdutoSelecionado" max="32767" attributes="0"/>
+                              <Component id="txfNovoProduto" alignment="0" max="32767" attributes="0"/>
+                              <Component id="jLabelProdutoSeleciona" alignment="0" max="32767" attributes="0"/>
                           </Group>
                           <EmptySpace min="0" pref="62" max="32767" attributes="0"/>
                       </Group>
@@ -202,6 +200,9 @@
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txfNovoProdutoActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="jbuttonSalvar">
           <Properties>
