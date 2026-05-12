@@ -28,7 +28,7 @@ public class Menu_iniciar extends javax.swing.JFrame {
         jMenuMedidor = new javax.swing.JMenuItem();
         jMenuComboBox = new javax.swing.JMenuItem();
         jMenuCalculaGravitacional = new javax.swing.JMenuItem();
-        jMenuAjuda = new javax.swing.JMenu();
+        jMenuConfiguracoes = new javax.swing.JMenu();
         jMenuSair = new javax.swing.JMenu();
 
         jMenuItem1.setText("jMenuItem1");
@@ -136,8 +136,13 @@ public class Menu_iniciar extends javax.swing.JFrame {
 
         jMenuBarIniciar.add(jMenuFormulario);
 
-        jMenuAjuda.setText("Ajuda");
-        jMenuBarIniciar.add(jMenuAjuda);
+        jMenuConfiguracoes.setText("Configurações");
+        jMenuConfiguracoes.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jMenuConfiguracoesMouseClicked(evt);
+            }
+        });
+        jMenuBarIniciar.add(jMenuConfiguracoes);
 
         jMenuSair.setText("Sair");
         jMenuSair.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -208,6 +213,11 @@ public class Menu_iniciar extends javax.swing.JFrame {
         c1.setVisible(true);
     }//GEN-LAST:event_jButtonImgGravidadeActionPerformed
 
+    private void jMenuConfiguracoesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenuConfiguracoesMouseClicked
+        ConfiguracoesJogo c1 = new ConfiguracoesJogo();
+        c1.setVisible(true);
+    }//GEN-LAST:event_jMenuConfiguracoesMouseClicked
+
     public static void main(String args[]) {
 
         try {
@@ -234,11 +244,11 @@ public class Menu_iniciar extends javax.swing.JFrame {
     private javax.swing.JLabel jLabelCombo;
     private javax.swing.JLabel jLabelGravidade;
     private javax.swing.JLabel jLabelMedidor;
-    private javax.swing.JMenu jMenuAjuda;
     private javax.swing.JMenuBar jMenuBarIniciar;
     private javax.swing.JMenuItem jMenuCalcula;
     private javax.swing.JMenuItem jMenuCalculaGravitacional;
     private javax.swing.JMenuItem jMenuComboBox;
+    private javax.swing.JMenu jMenuConfiguracoes;
     private javax.swing.JMenu jMenuFormulario;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuMedidor;
