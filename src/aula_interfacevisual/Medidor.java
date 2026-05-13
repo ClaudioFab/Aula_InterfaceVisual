@@ -37,6 +37,7 @@ public class Medidor extends javax.swing.JFrame {
         jLabelNomeMedidor.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabelNomeMedidor.setForeground(new java.awt.Color(255, 255, 255));
         jLabelNomeMedidor.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabelNomeMedidor.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/icons8-velocímetro-50.png"))); // NOI18N
         jLabelNomeMedidor.setText("Medidor do Triângulo");
 
         jLabelLado1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N

@@ -9,6 +9,7 @@ public class ConfiguracoesJogo extends javax.swing.JFrame {
     public ConfiguracoesJogo() {
         initComponents();
     }
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -205,35 +206,43 @@ public class ConfiguracoesJogo extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
+    public void nãoPode() {
+        JOptionPane.showMessageDialog(null, "Entrada inválida!", "Erro", JOptionPane.ERROR_MESSAGE);
+    }
+
     private void jRadioButtonDificilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButtonDificilActionPerformed
         // TODO add your handling code here:
-        
+
     }//GEN-LAST:event_jRadioButtonDificilActionPerformed
 
     private void jButtonSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSalvarActionPerformed
-        String dificuldade="";
-        
+        String dificuldade = "";
+
         //Radion Button
         if (jRadioButtonFacil.isSelected()) {
             dificuldade = "Fácil";
-        }else if (jRadioButtonMedio.isSelected()) {
+        } else if (jRadioButtonMedio.isSelected()) {
             dificuldade = "Médio";
-        }else if(jRadioButtonDificil.isSelected()){
+        } else if (jRadioButtonDificil.isSelected()) {
             dificuldade = "Difícil";
+        } else {
+            nãoPode();
+            return;
         }
-        
+
+        String mensagem = "";
         //Formação de mensagem.
-        String mensagem="";
-        mensagem += "Música: "+(jCheckBoxMusica.isSelected()? "Ativado" : "Desativado")+"\n";
-        mensagem += "Legenda: "+(jCheckBoxLegendas.isSelected()? "Ativado" : "Desativado")+"\n";
-        mensagem += "Tela Cheia: "+(jCheckBoxTelaCheia.isSelected()? "Ativado" : "Desativado")+"\n";
-        
-        mensagem += "Dificuldade: "+dificuldade+".\n";
+        mensagem += "Música: " + (jCheckBoxMusica.isSelected() ? "Ativado" : "Desativado") + "\n";
+        mensagem += "Legenda: " + (jCheckBoxLegendas.isSelected() ? "Ativado" : "Desativado") + "\n";
+        mensagem += "Tela Cheia: " + (jCheckBoxTelaCheia.isSelected() ? "Ativado" : "Desativado") + "\n";
 
-        mensagem += "Volume: "+jSliderVolume.getValue()+".";
+        mensagem += "Dificuldade: " + dificuldade + ".\n";
 
-        JOptionPane.showMessageDialog(null,mensagem,"Configurações Salvas!",JOptionPane.WARNING_MESSAGE);
-        
+        mensagem += "Volume: " + jSliderVolume.getValue() + ".";
+
+        JOptionPane.showMessageDialog(null, mensagem, "Configurações Salvas!", JOptionPane.WARNING_MESSAGE);
+
+
     }//GEN-LAST:event_jButtonSalvarActionPerformed
 
     private void jCheckBoxMusicaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBoxMusicaActionPerformed
@@ -245,7 +254,6 @@ public class ConfiguracoesJogo extends javax.swing.JFrame {
     }//GEN-LAST:event_jRadioButtonMedioActionPerformed
 
     public static void main(String args[]) {
-
 
         java.awt.EventQueue.invokeLater(() -> new ConfiguracoesJogo().setVisible(true));
     }

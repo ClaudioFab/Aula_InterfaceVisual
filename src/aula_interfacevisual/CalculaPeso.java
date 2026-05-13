@@ -63,6 +63,7 @@ public class CalculaPeso extends javax.swing.JFrame {
         jLabelCalculaGravit.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabelCalculaGravit.setForeground(new java.awt.Color(255, 255, 255));
         jLabelCalculaGravit.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabelCalculaGravit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/icons8-gravidade-64.png"))); // NOI18N
         jLabelCalculaGravit.setText("Calculadora de Peso Gravitacional");
 
         jLabelNomePeso.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
@@ -98,7 +99,7 @@ public class CalculaPeso extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jLabelCalculaGravit, javax.swing.GroupLayout.DEFAULT_SIZE, 434, Short.MAX_VALUE))
+                        .addComponent(jLabelCalculaGravit, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(82, 82, 82)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)

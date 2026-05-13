@@ -41,6 +41,7 @@ public class ComboBox extends javax.swing.JFrame {
         jLabelNomeComboBox.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabelNomeComboBox.setForeground(new java.awt.Color(255, 255, 255));
         jLabelNomeComboBox.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabelNomeComboBox.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/icons8-caixa-50.png"))); // NOI18N
         jLabelNomeComboBox.setText("Trabalhando com Combo Box");
 
         txfProdutoSelecionado.setEditable(false);

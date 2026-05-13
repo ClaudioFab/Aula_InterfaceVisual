@@ -8,12 +8,19 @@ public class SistemaCadastro extends javax.swing.JFrame {
 
     public SistemaCadastro() {
         initComponents();
-        iniciando();        
+        iniciando();
     }
-    public void iniciando(){
+
+    public void iniciando() {
         int num = jSliderExperiencia.getValue();
-        jLabelExperiencia.setText("Experiência: "+num);
+        jLabelExperiencia.setText("Experiência: " + num);
     }
+
+    public void nãoPode() {
+        JOptionPane.showMessageDialog(null, "Entrada inválida!", "Erro", JOptionPane.ERROR_MESSAGE);
+        jTextFieldNomeFuncionario.setText("");
+    }
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -324,45 +331,58 @@ public class SistemaCadastro extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButtonSalvarCadastroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSalvarCadastroActionPerformed
-        String hora="";
+        String hora = "", mensagem = "", beneficios = "";
+
+        if (jTextFieldNomeFuncionario.getText().isEmpty()) {
+            nãoPode();
+            return;
+        }
+
         if (jRadioButtonManha.isSelected()) {
             hora = "Manhã";
-        }else if (jRadioButtonTarde.isSelected()) {
+        } else if (jRadioButtonTarde.isSelected()) {
             hora = "Tarde";
-        }else if(jRadioButtonNoite.isSelected()){
+        } else if (jRadioButtonNoite.isSelected()) {
             hora = "Noite";
+        } else {
+            nãoPode();
+            return;
         }
-        
-        String beneficios = "";
-        if(jCheckBoxValeAlimentacao.isSelected()){
-            beneficios += "Vale Alimentação\n";
+
+        try {
+            if (jCheckBoxValeAlimentacao.isSelected()) {
+                beneficios += "Vale Alimentação\n";
+            }
+            if (jCheckBoxPlanoSaude.isSelected()) {
+                beneficios += "Plano de Saúde\n";
+            }
+            if (jCheckBoxValeTransporte.isSelected()) {
+                beneficios += "Vale Transporte\n";
+            }
+            if (jCheckBoxHomeOffice.isSelected()) {
+                beneficios += "Home Office\n";
+            }
+
+        } catch (Exception e) {
+            nãoPode();
+            return;
         }
-        if(jCheckBoxPlanoSaude.isSelected()){
-            beneficios += "Plano de Saúde\n";
-        }
-        if(jCheckBoxValeTransporte.isSelected()){
-            beneficios += "Vale Transporte\n";
-        }
-        if(jCheckBoxHomeOffice.isSelected()){
-            beneficios += "Home Office\n";
-        }
-        
+
         //Formação de mensagem.
-        String mensagem="";
-        mensagem += "Funcionário: "+jTextFieldNomeFuncionario.getText()+"\n\n";        
+        mensagem += "Funcionário: " + jTextFieldNomeFuncionario.getText() + "\n\n";
         String setor = jComboBoxSetor.getSelectedItem().toString();
-        mensagem += "Setor: "+setor+"\n\n";        
-        mensagem += "Turno: "+hora+"\n\n";
-        mensagem += "Beneficios: \n"+beneficios+"\n";
-        mensagem += "Experiência: "+jSliderExperiencia.getValue();
+        mensagem += "Setor: " + setor + "\n\n";
+        mensagem += "Turno: " + hora + "\n\n";
+        mensagem += "Beneficios: \n" + beneficios + "\n";
+        mensagem += "Experiência: " + jSliderExperiencia.getValue();
         int num = jSliderExperiencia.getValue();
-        jLabelExperiencia.setText("Experiência: "+num);
-        JOptionPane.showMessageDialog(null,mensagem,"Configurações Salvas!",JOptionPane.WARNING_MESSAGE);
-        jTextFieldNomeFuncionario.setText("");        
+        jLabelExperiencia.setText("Experiência: " + num);
+        JOptionPane.showMessageDialog(null, mensagem, "Configurações Salvas!", JOptionPane.WARNING_MESSAGE);
+
+        jTextFieldNomeFuncionario.setText("");
     }//GEN-LAST:event_jButtonSalvarCadastroActionPerformed
 
     public static void main(String args[]) {
-
 
         java.awt.EventQueue.invokeLater(() -> new SistemaCadastro().setVisible(true));
     }

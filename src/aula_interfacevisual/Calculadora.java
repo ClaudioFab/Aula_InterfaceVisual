@@ -81,6 +81,7 @@ public class Calculadora extends javax.swing.JFrame {
         jLabelNomeCalcula.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabelNomeCalcula.setForeground(new java.awt.Color(255, 255, 255));
         jLabelNomeCalcula.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabelNomeCalcula.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/icons8-calculadora-50.png"))); // NOI18N
         jLabelNomeCalcula.setText("Calculadora Genérica");
 
         jLabelNumero01.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
