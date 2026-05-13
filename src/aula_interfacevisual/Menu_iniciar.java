@@ -24,6 +24,7 @@ public class Menu_iniciar extends javax.swing.JFrame {
         jLabelGravidade = new javax.swing.JLabel();
         jMenuBarIniciar = new javax.swing.JMenuBar();
         jMenuFormulario = new javax.swing.JMenu();
+        jMenuItemCadastroFuncionario = new javax.swing.JMenuItem();
         jMenuCalcula = new javax.swing.JMenuItem();
         jMenuMedidor = new javax.swing.JMenuItem();
         jMenuComboBox = new javax.swing.JMenuItem();
@@ -117,6 +118,10 @@ public class Menu_iniciar extends javax.swing.JFrame {
         );
 
         jMenuFormulario.setText("Formulários");
+
+        jMenuItemCadastroFuncionario.setText("Cadastro de Funcionários");
+        jMenuItemCadastroFuncionario.addActionListener(this::jMenuItemCadastroFuncionarioActionPerformed);
+        jMenuFormulario.add(jMenuItemCadastroFuncionario);
 
         jMenuCalcula.setText("Calculadora Genérica");
         jMenuCalcula.addActionListener(this::jMenuCalculaActionPerformed);
@@ -218,6 +223,11 @@ public class Menu_iniciar extends javax.swing.JFrame {
         c1.setVisible(true);
     }//GEN-LAST:event_jMenuConfiguracoesMouseClicked
 
+    private void jMenuItemCadastroFuncionarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemCadastroFuncionarioActionPerformed
+        SistemaCadastro c1 = new SistemaCadastro();
+        c1.setVisible(true);
+    }//GEN-LAST:event_jMenuItemCadastroFuncionarioActionPerformed
+
     public static void main(String args[]) {
 
         try {
@@ -251,6 +261,7 @@ public class Menu_iniciar extends javax.swing.JFrame {
     private javax.swing.JMenu jMenuConfiguracoes;
     private javax.swing.JMenu jMenuFormulario;
     private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JMenuItem jMenuItemCadastroFuncionario;
     private javax.swing.JMenuItem jMenuMedidor;
     private javax.swing.JMenu jMenuSair;
     private javax.swing.JPanel jPanelMenuVerm;

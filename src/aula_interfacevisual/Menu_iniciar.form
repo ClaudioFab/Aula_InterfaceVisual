@@ -19,6 +19,14 @@
             <Property name="text" type="java.lang.String" value="Formul&#xe1;rios"/>
           </Properties>
           <SubComponents>
+            <MenuItem class="javax.swing.JMenuItem" name="jMenuItemCadastroFuncionario">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Cadastro de Funcion&#xe1;rios"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMenuItemCadastroFuncionarioActionPerformed"/>
+              </Events>
+            </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="jMenuCalcula">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Calculadora Gen&#xe9;rica"/>

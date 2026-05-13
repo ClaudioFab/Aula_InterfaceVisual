@@ -91,6 +91,7 @@ public class ConfiguracoesJogo extends javax.swing.JFrame {
         jRadioButtonMedio.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jRadioButtonMedio.setForeground(new java.awt.Color(255, 255, 255));
         jRadioButtonMedio.setText("Médio");
+        jRadioButtonMedio.addActionListener(this::jRadioButtonMedioActionPerformed);
 
         jRadioButtonDificil.setBackground(new java.awt.Color(102, 0, 0));
         buttonGroupDificuldade.add(jRadioButtonDificil);
@@ -238,6 +239,10 @@ public class ConfiguracoesJogo extends javax.swing.JFrame {
     private void jCheckBoxMusicaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBoxMusicaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jCheckBoxMusicaActionPerformed
+
+    private void jRadioButtonMedioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButtonMedioActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jRadioButtonMedioActionPerformed
 
     public static void main(String args[]) {
 

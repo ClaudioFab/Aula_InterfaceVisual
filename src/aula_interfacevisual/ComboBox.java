@@ -31,9 +31,9 @@ public class ComboBox extends javax.swing.JFrame {
         jPanelBaseComboBox.setForeground(new java.awt.Color(0, 0, 0));
         jPanelBaseComboBox.setFocusable(false);
 
-        jcbProdutos.setBackground(new java.awt.Color(0, 0, 0));
+        jcbProdutos.setBackground(new java.awt.Color(255, 255, 255));
         jcbProdutos.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jcbProdutos.setForeground(new java.awt.Color(255, 255, 255));
+        jcbProdutos.setForeground(new java.awt.Color(0, 0, 0));
         jcbProdutos.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Pizza de Calabreza 8/8", "Pizza de Frango com Bacon 8/8", "Pizza de Frango e Milho 12/12", "Pizza Portuguesa 12/12", "Pizza Doce Muse Maracujá 6/6" }));
         jcbProdutos.addActionListener(this::jcbProdutosActionPerformed);
 

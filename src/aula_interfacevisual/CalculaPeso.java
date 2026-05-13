@@ -72,10 +72,11 @@ public class CalculaPeso extends javax.swing.JFrame {
         txfPesoTerra.setBackground(new java.awt.Color(0, 0, 0));
         txfPesoTerra.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         txfPesoTerra.setForeground(new java.awt.Color(255, 255, 255));
+        txfPesoTerra.addActionListener(this::txfPesoTerraActionPerformed);
 
-        jCBPlanetas.setBackground(new java.awt.Color(0, 0, 0));
+        jCBPlanetas.setBackground(new java.awt.Color(255, 255, 255));
         jCBPlanetas.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jCBPlanetas.setForeground(new java.awt.Color(255, 255, 255));
+        jCBPlanetas.setForeground(new java.awt.Color(0, 0, 0));
         jCBPlanetas.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Mercúrio", "Vênus", "Terra", "Marte", "Júpiter", "Saturno", "Urano", "Netuno", "Lua", "(Plutão)" }));
 
         jButtonCalculaPeso.setBackground(new java.awt.Color(54, 47, 47));
@@ -181,6 +182,10 @@ public class CalculaPeso extends javax.swing.JFrame {
         }
         respostaGravidade(gravPlaneta);
     }//GEN-LAST:event_jButtonCalculaPesoActionPerformed
+
+    private void txfPesoTerraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txfPesoTerraActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txfPesoTerraActionPerformed
 
     public static void main(String args[]) {
 
