@@ -262,9 +262,9 @@ public class SistemaCadastro extends javax.swing.JFrame {
 
         jPanelSalvarCadastro.setBackground(new java.awt.Color(102, 0, 0));
 
-        jButtonSalvarCadastro.setBackground(new java.awt.Color(255, 255, 255));
+        jButtonSalvarCadastro.setBackground(new java.awt.Color(54, 47, 47));
         jButtonSalvarCadastro.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jButtonSalvarCadastro.setForeground(new java.awt.Color(0, 0, 0));
+        jButtonSalvarCadastro.setForeground(new java.awt.Color(255, 255, 255));
         jButtonSalvarCadastro.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/icons8-guardar-todos-30.png"))); // NOI18N
         jButtonSalvarCadastro.setText("Salvar Cadastro");
         jButtonSalvarCadastro.addActionListener(this::jButtonSalvarCadastroActionPerformed);

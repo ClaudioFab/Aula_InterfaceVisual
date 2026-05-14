@@ -17,14 +17,10 @@ public class Menu_iniciar extends javax.swing.JFrame {
         jPanelMenuVerm = new javax.swing.JPanel();
         jButtonImgCalculadora = new javax.swing.JButton();
         jButtonImgMedidor = new javax.swing.JButton();
-        jLabelCalcula = new javax.swing.JLabel();
-        jLabelMedidor = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
-        jLabelCombo = new javax.swing.JLabel();
         jButtonImgGravidade = new javax.swing.JButton();
-        jLabelGravidade = new javax.swing.JLabel();
         jButtonCadastroFuncionario = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
+        jButtonJogoJoKenPo = new javax.swing.JButton();
         jMenuBarIniciar = new javax.swing.JMenuBar();
         jMenuFormulario = new javax.swing.JMenu();
         jMenuCalcula = new javax.swing.JMenuItem();
@@ -32,6 +28,7 @@ public class Menu_iniciar extends javax.swing.JFrame {
         jMenuComboBox = new javax.swing.JMenuItem();
         jMenuCalculaGravitacional = new javax.swing.JMenuItem();
         jMenuItemCadastroFuncionario = new javax.swing.JMenuItem();
+        jMenuPedraPapelTesoura = new javax.swing.JMenuItem();
         jMenuConfiguracoes = new javax.swing.JMenu();
         jMenuSair = new javax.swing.JMenu();
 
@@ -47,101 +44,84 @@ public class Menu_iniciar extends javax.swing.JFrame {
         jPanelMenuVerm.setForeground(new java.awt.Color(0, 0, 0));
 
         jButtonImgCalculadora.setBackground(new java.awt.Color(255, 255, 255));
+        jButtonImgCalculadora.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
+        jButtonImgCalculadora.setForeground(new java.awt.Color(0, 0, 0));
         jButtonImgCalculadora.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/icons8-calculadora-50.png"))); // NOI18N
+        jButtonImgCalculadora.setText(" Calculadora Genérica");
+        jButtonImgCalculadora.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jButtonImgCalculadora.addActionListener(this::jButtonImgCalculadoraActionPerformed);
 
         jButtonImgMedidor.setBackground(new java.awt.Color(255, 255, 255));
+        jButtonImgMedidor.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
+        jButtonImgMedidor.setForeground(new java.awt.Color(0, 0, 0));
         jButtonImgMedidor.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/icons8-velocímetro-50.png"))); // NOI18N
+        jButtonImgMedidor.setText(" Medidor de Triângulo");
+        jButtonImgMedidor.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jButtonImgMedidor.addActionListener(this::jButtonImgMedidorActionPerformed);
 
-        jLabelCalcula.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jLabelCalcula.setForeground(new java.awt.Color(255, 255, 255));
-        jLabelCalcula.setText("Calculadora Genérica");
-
-        jLabelMedidor.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jLabelMedidor.setForeground(new java.awt.Color(255, 255, 255));
-        jLabelMedidor.setText("Medidor de Triângulo");
-
         jButton1.setBackground(new java.awt.Color(255, 255, 255));
+        jButton1.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(0, 0, 0));
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/icons8-caixa-50.png"))); // NOI18N
+        jButton1.setText(" Combo Box Pizzaria");
+        jButton1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jButton1.addActionListener(this::jButton1ActionPerformed);
 
-        jLabelCombo.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jLabelCombo.setForeground(new java.awt.Color(255, 255, 255));
-        jLabelCombo.setText("Combo Box Pizzaria");
-
         jButtonImgGravidade.setBackground(new java.awt.Color(255, 255, 255));
+        jButtonImgGravidade.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
+        jButtonImgGravidade.setForeground(new java.awt.Color(0, 0, 0));
         jButtonImgGravidade.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/icons8-gravidade-64.png"))); // NOI18N
+        jButtonImgGravidade.setText(" Peso Gravitacional");
+        jButtonImgGravidade.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jButtonImgGravidade.addActionListener(this::jButtonImgGravidadeActionPerformed);
 
-        jLabelGravidade.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jLabelGravidade.setForeground(new java.awt.Color(255, 255, 255));
-        jLabelGravidade.setText("Peso Gravitacional");
-
         jButtonCadastroFuncionario.setBackground(new java.awt.Color(255, 255, 255));
+        jButtonCadastroFuncionario.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
+        jButtonCadastroFuncionario.setForeground(new java.awt.Color(0, 0, 0));
         jButtonCadastroFuncionario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/icons8-cadastro-60.png"))); // NOI18N
+        jButtonCadastroFuncionario.setText(" Cadastros de Funcionários");
+        jButtonCadastroFuncionario.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jButtonCadastroFuncionario.addActionListener(this::jButtonCadastroFuncionarioActionPerformed);
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("Cadastros de Funcionários");
+        jButtonJogoJoKenPo.setBackground(new java.awt.Color(255, 255, 255));
+        jButtonJogoJoKenPo.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
+        jButtonJogoJoKenPo.setForeground(new java.awt.Color(0, 0, 0));
+        jButtonJogoJoKenPo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/icons8-arcade-de-maçã-50.png"))); // NOI18N
+        jButtonJogoJoKenPo.setText(" Jogo Pedra /Papel /Tesoura");
+        jButtonJogoJoKenPo.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jButtonJogoJoKenPo.addActionListener(this::jButtonJogoJoKenPoActionPerformed);
 
         javax.swing.GroupLayout jPanelMenuVermLayout = new javax.swing.GroupLayout(jPanelMenuVerm);
         jPanelMenuVerm.setLayout(jPanelMenuVermLayout);
         jPanelMenuVermLayout.setHorizontalGroup(
             jPanelMenuVermLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelMenuVermLayout.createSequentialGroup()
-                .addContainerGap(42, Short.MAX_VALUE)
-                .addGroup(jPanelMenuVermLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanelMenuVermLayout.createSequentialGroup()
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabelCombo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(jPanelMenuVermLayout.createSequentialGroup()
-                        .addComponent(jButtonImgMedidor, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabelMedidor, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(jPanelMenuVermLayout.createSequentialGroup()
-                        .addComponent(jButtonImgCalculadora, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabelCalcula, javax.swing.GroupLayout.PREFERRED_SIZE, 296, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(36, 42, Short.MAX_VALUE))
-                    .addGroup(jPanelMenuVermLayout.createSequentialGroup()
-                        .addGroup(jPanelMenuVermLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanelMenuVermLayout.createSequentialGroup()
-                                .addComponent(jButtonCadastroFuncionario, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel1))
-                            .addGroup(jPanelMenuVermLayout.createSequentialGroup()
-                                .addComponent(jButtonImgGravidade, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabelGravidade, javax.swing.GroupLayout.PREFERRED_SIZE, 296, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(0, 0, Short.MAX_VALUE))))
+                .addContainerGap(47, Short.MAX_VALUE)
+                .addGroup(jPanelMenuVermLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jButtonJogoJoKenPo, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButtonCadastroFuncionario, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButtonImgGravidade, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButton1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButtonImgMedidor, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButtonImgCalculadora, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(0, 47, Short.MAX_VALUE))
         );
         jPanelMenuVermLayout.setVerticalGroup(
             jPanelMenuVermLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelMenuVermLayout.createSequentialGroup()
-                .addGap(40, 40, 40)
-                .addGroup(jPanelMenuVermLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jButtonImgCalculadora, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabelCalcula, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(40, 40, 40)
-                .addGroup(jPanelMenuVermLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jButtonImgMedidor, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabelMedidor, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(40, 40, 40)
-                .addGroup(jPanelMenuVermLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabelCombo, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(40, 40, 40)
-                .addGroup(jPanelMenuVermLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jButtonImgGravidade, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabelGravidade, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(40, 40, 40)
-                .addGroup(jPanelMenuVermLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jButtonCadastroFuncionario, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(73, Short.MAX_VALUE))
+                .addGap(25, 25, 25)
+                .addComponent(jButtonImgCalculadora, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jButtonImgMedidor, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jButtonImgGravidade, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jButtonCadastroFuncionario, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jButtonJogoJoKenPo, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(98, Short.MAX_VALUE))
         );
 
         jMenuFormulario.setText("Formulários");
@@ -165,6 +145,10 @@ public class Menu_iniciar extends javax.swing.JFrame {
         jMenuItemCadastroFuncionario.setText("Cadastro de Funcionários");
         jMenuItemCadastroFuncionario.addActionListener(this::jMenuItemCadastroFuncionarioActionPerformed);
         jMenuFormulario.add(jMenuItemCadastroFuncionario);
+
+        jMenuPedraPapelTesoura.setText("Jogo Pedra/ Papel/ Tesoura");
+        jMenuPedraPapelTesoura.addActionListener(this::jMenuPedraPapelTesouraActionPerformed);
+        jMenuFormulario.add(jMenuPedraPapelTesoura);
 
         jMenuBarIniciar.add(jMenuFormulario);
 
@@ -260,6 +244,16 @@ public class Menu_iniciar extends javax.swing.JFrame {
         c1.setVisible(true);
     }//GEN-LAST:event_jButtonCadastroFuncionarioActionPerformed
 
+    private void jMenuPedraPapelTesouraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuPedraPapelTesouraActionPerformed
+        Jogo_JoKenPo c1 = new Jogo_JoKenPo();
+        c1.setVisible(true);
+    }//GEN-LAST:event_jMenuPedraPapelTesouraActionPerformed
+
+    private void jButtonJogoJoKenPoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonJogoJoKenPoActionPerformed
+        Jogo_JoKenPo c1 = new Jogo_JoKenPo();
+        c1.setVisible(true);
+    }//GEN-LAST:event_jButtonJogoJoKenPoActionPerformed
+
     public static void main(String args[]) {
 
         try {
@@ -282,12 +276,8 @@ public class Menu_iniciar extends javax.swing.JFrame {
     private javax.swing.JButton jButtonImgCalculadora;
     private javax.swing.JButton jButtonImgGravidade;
     private javax.swing.JButton jButtonImgMedidor;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JButton jButtonJogoJoKenPo;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabelCalcula;
-    private javax.swing.JLabel jLabelCombo;
-    private javax.swing.JLabel jLabelGravidade;
-    private javax.swing.JLabel jLabelMedidor;
     private javax.swing.JMenuBar jMenuBarIniciar;
     private javax.swing.JMenuItem jMenuCalcula;
     private javax.swing.JMenuItem jMenuCalculaGravitacional;
@@ -297,6 +287,7 @@ public class Menu_iniciar extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItemCadastroFuncionario;
     private javax.swing.JMenuItem jMenuMedidor;
+    private javax.swing.JMenuItem jMenuPedraPapelTesoura;
     private javax.swing.JMenu jMenuSair;
     private javax.swing.JPanel jPanelMenuVerm;
     // End of variables declaration//GEN-END:variables
