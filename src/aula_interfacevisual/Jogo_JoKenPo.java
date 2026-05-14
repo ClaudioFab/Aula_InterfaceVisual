@@ -1,6 +1,7 @@
 package aula_interfacevisual;
 
 import java.util.Random;
+import javax.swing.JOptionPane;
 
 public class Jogo_JoKenPo extends javax.swing.JFrame {
 
@@ -8,7 +9,9 @@ public class Jogo_JoKenPo extends javax.swing.JFrame {
 
     public Jogo_JoKenPo() {
         initComponents();
+        jTextAreaTela.setText("Escolha Pedra, Papel ou Tesoura.");
     }
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -84,7 +87,7 @@ public class Jogo_JoKenPo extends javax.swing.JFrame {
         jPanelBotaoLayout.setHorizontalGroup(
             jPanelBotaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelBotaoLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(36, Short.MAX_VALUE)
                 .addComponent(jButtonComecar, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(48, 48, 48))
         );
@@ -100,7 +103,7 @@ public class Jogo_JoKenPo extends javax.swing.JFrame {
 
         jTextAreaTela.setEditable(false);
         jTextAreaTela.setBackground(new java.awt.Color(0, 0, 0));
-        jTextAreaTela.setColumns(23);
+        jTextAreaTela.setColumns(19);
         jTextAreaTela.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jTextAreaTela.setForeground(new java.awt.Color(255, 255, 255));
         jTextAreaTela.setRows(3);
@@ -112,9 +115,9 @@ public class Jogo_JoKenPo extends javax.swing.JFrame {
         jPanelTelaLayout.setHorizontalGroup(
             jPanelTelaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelTelaLayout.createSequentialGroup()
-                .addGap(25, 25, 25)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(25, Short.MAX_VALUE))
+                .addGap(61, 61, 61)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 328, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanelTelaLayout.setVerticalGroup(
             jPanelTelaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -178,30 +181,53 @@ public class Jogo_JoKenPo extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButtonComecarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonComecarActionPerformed
-        
-        String escolha="",mensagem="",computador="";
-        
+
+        String escolha01 = "", mensagem = "", computador = "";
+
         if (jRadioButtonPedra.isSelected()) {
-            escolha = "Pedra";
+            escolha01 = "Pedra";
         } else if (jRadioButtonPapel.isSelected()) {
-            escolha = "Papel";
+            escolha01 = "Papel";
         } else if (jRadioButtonTesoura.isSelected()) {
-            escolha = "Tesoura";
+            escolha01 = "Tesoura";
         }
-        
-        mensagem += "Você escolheu: "+escolha;
-        
+
+        Random valorGerado = new Random();
+        int randomico = valorGerado.nextInt(3);
+
+        String escolha02 = "";
+
+        if (randomico == 0) {
+            escolha02 = "Pedra";
+        } else if (randomico == 1) {
+            escolha02 = "Papel";
+        } else if (randomico == 2) {
+            escolha02 = "Tesoura";
+        }
+
+        mensagem += "Você escolheu: " + escolha01 + "\n";
+        mensagem += "Computador: " + escolha02 + "\n";
+
+        if (escolha01.equals("")) {
+            jTextAreaTela.setText("Escolha Pedra, Papel ou Tesoura.");
+            JOptionPane.showMessageDialog(null, "Escolha Pedra, Papel ou Tesoura!", "Vazio", JOptionPane.ERROR_MESSAGE);
+            return;
+        }else if (escolha01.equals(escolha02)) {
+            mensagem += "EMPATE!";
+
+        } else if (escolha01.equals("Pedra") && escolha02.equals("Tesoura") || escolha01.equals("Papel") && escolha02.equals("Pedra") || escolha01.equals("Tesoura") && escolha02.equals("Papel")) {
+            mensagem += "Você GANHOU!";
+        } else {
+            mensagem += "Você PERDEU!";
+        }
+
         jTextAreaTela.setText(mensagem);
-        
-        Random valorGerado = new Random();        
-        int escolhaComputador = valorGerado.nextInt(3);
-        
-        
-        
+
+        buttonGroupJoKenPo.clearSelection();
+
     }//GEN-LAST:event_jButtonComecarActionPerformed
 
     public static void main(String args[]) {
-
 
         java.awt.EventQueue.invokeLater(() -> new Jogo_JoKenPo().setVisible(true));
     }

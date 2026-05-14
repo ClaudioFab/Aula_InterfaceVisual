@@ -1,5 +1,6 @@
 package aula_interfacevisual;
 
+import java.awt.Color;
 import javax.swing.JOptionPane;
 
 public class SistemaCadastro extends javax.swing.JFrame {
@@ -16,9 +17,22 @@ public class SistemaCadastro extends javax.swing.JFrame {
         jLabelExperiencia.setText("Experiência: " + num);
     }
 
+    public void resetar() {
+        jTextFieldNomeFuncionario.setText("");
+        buttonGroupTurnoTrabalho.clearSelection();
+        jCheckBoxValeAlimentacao.setSelected(false);
+        jCheckBoxPlanoSaude.setSelected(false);
+        jCheckBoxValeTransporte.setSelected(false);
+        jCheckBoxHomeOffice.setSelected(false);
+        jSliderExperiencia.setValue(5);
+        jLabelExperiencia.setText("Experiência: " + 5);
+        jLabelExperiencia.setForeground(Color.WHITE);
+        jComboBoxSetor.setSelectedIndex(0);
+    }
+
     public void nãoPode() {
         JOptionPane.showMessageDialog(null, "Entrada inválida!", "Erro", JOptionPane.ERROR_MESSAGE);
-        jTextFieldNomeFuncionario.setText("");
+        resetar();
     }
 
     @SuppressWarnings("unchecked")
@@ -84,7 +98,7 @@ public class SistemaCadastro extends javax.swing.JFrame {
         jComboBoxSetor.setBackground(new java.awt.Color(255, 255, 255));
         jComboBoxSetor.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jComboBoxSetor.setForeground(new java.awt.Color(0, 0, 0));
-        jComboBoxSetor.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "TI - Técnologia da Informação", "RH - Recursos Humanos", "Financeiro", "Administrativo" }));
+        jComboBoxSetor.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "(Selecione Setor)", "TI - Técnologia da Informação", "RH - Recursos Humanos", "Financeiro", "Administrativo" }));
 
         javax.swing.GroupLayout jPanelSetorLayout = new javax.swing.GroupLayout(jPanelSetor);
         jPanelSetor.setLayout(jPanelSetorLayout);
@@ -230,7 +244,7 @@ public class SistemaCadastro extends javax.swing.JFrame {
         jSliderExperiencia.setPaintTicks(true);
         jSliderExperiencia.setSnapToTicks(true);
         jSliderExperiencia.setValue(5);
-        jSliderExperiencia.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jSliderExperiencia.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
         jLabelExperiencia.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabelExperiencia.setForeground(new java.awt.Color(255, 255, 255));
@@ -331,8 +345,12 @@ public class SistemaCadastro extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButtonSalvarCadastroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSalvarCadastroActionPerformed
-        String hora = "", mensagem = "", beneficios = "";
+        String hora = "", mensagem = "", beneficios = "", nivel = "";
 
+        if (jComboBoxSetor.getSelectedIndex() == 0) {
+            nãoPode();
+            return;
+        }
         if (jTextFieldNomeFuncionario.getText().isEmpty()) {
             nãoPode();
             return;
@@ -362,10 +380,36 @@ public class SistemaCadastro extends javax.swing.JFrame {
             if (jCheckBoxHomeOffice.isSelected()) {
                 beneficios += "Home Office\n";
             }
+            if (beneficios.equals("")) {
+                beneficios += "Nenhum\n";
+            }
 
         } catch (Exception e) {
             nãoPode();
             return;
+        }
+
+        int num = jSliderExperiencia.getValue();
+        if (num >= 0 && num <= 3) {
+            nivel = "Júnior";
+        } else if (num >= 4 && num <= 7) {
+            nivel = "Pleno";
+        } else if (num >= 8 && num <= 10) {
+            nivel = "Sênior";
+        }
+
+        if (num >= 0 && num <= 1) {
+            jLabelExperiencia.setForeground(Color.RED);
+        } else if (num >= 2 && num <= 3) {
+            jLabelExperiencia.setForeground(Color.BLACK);
+        } else if (num >= 4 && num <= 5) {
+            jLabelExperiencia.setForeground(Color.YELLOW);
+        } else if (num >= 6 && num <= 7) {
+            jLabelExperiencia.setForeground(Color.ORANGE);
+        } else if (num >= 8 && num <= 9) {
+            jLabelExperiencia.setForeground(Color.CYAN);
+        } else {
+            jLabelExperiencia.setForeground(Color.GREEN);
         }
 
         //Formação de mensagem.
@@ -374,12 +418,13 @@ public class SistemaCadastro extends javax.swing.JFrame {
         mensagem += "Setor: " + setor + "\n\n";
         mensagem += "Turno: " + hora + "\n\n";
         mensagem += "Beneficios: \n" + beneficios + "\n";
-        mensagem += "Experiência: " + jSliderExperiencia.getValue();
-        int num = jSliderExperiencia.getValue();
+        mensagem += "Experiência: " + jSliderExperiencia.getValue() + " " + nivel;
+
         jLabelExperiencia.setText("Experiência: " + num);
         JOptionPane.showMessageDialog(null, mensagem, "Configurações Salvas!", JOptionPane.WARNING_MESSAGE);
 
-        jTextFieldNomeFuncionario.setText("");
+        resetar();
+
     }//GEN-LAST:event_jButtonSalvarCadastroActionPerformed
 
     public static void main(String args[]) {
