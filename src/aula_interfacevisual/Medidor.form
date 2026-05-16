@@ -142,6 +142,7 @@
               <Image iconType="3" name="/img/icons8-veloc&#xed;metro-50.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Medidor do Tri&#xe2;ngulo"/>
+            <Property name="horizontalTextPosition" type="int" value="0"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabelLado1">

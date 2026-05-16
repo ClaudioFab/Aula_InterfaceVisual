@@ -134,6 +134,7 @@ public class Jogo_JoKenPo extends javax.swing.JFrame {
         jLabelTituloJoKenPo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabelTituloJoKenPo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/icons8-arcade-de-maçã-50.png"))); // NOI18N
         jLabelTituloJoKenPo.setText(" Jogo Pedra  Papel  Tesoura");
+        jLabelTituloJoKenPo.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
         javax.swing.GroupLayout jPanelNomeTopoLayout = new javax.swing.GroupLayout(jPanelNomeTopo);
         jPanelNomeTopo.setLayout(jPanelNomeTopoLayout);

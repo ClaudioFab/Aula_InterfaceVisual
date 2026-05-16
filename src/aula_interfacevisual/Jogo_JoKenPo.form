@@ -281,6 +281,7 @@
               <Image iconType="3" name="/img/icons8-arcade-de-ma&#xe7;&#xe3;-50.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value=" Jogo Pedra  Papel  Tesoura"/>
+            <Property name="horizontalTextPosition" type="int" value="0"/>
           </Properties>
         </Component>
       </SubComponents>

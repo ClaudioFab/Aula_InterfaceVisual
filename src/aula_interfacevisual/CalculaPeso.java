@@ -65,6 +65,7 @@ public class CalculaPeso extends javax.swing.JFrame {
         jLabelCalculaGravit.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabelCalculaGravit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/icons8-gravidade-64.png"))); // NOI18N
         jLabelCalculaGravit.setText("Calculadora de Peso Gravitacional");
+        jLabelCalculaGravit.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
         jLabelNomePeso.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabelNomePeso.setForeground(new java.awt.Color(255, 255, 255));

@@ -108,6 +108,7 @@
               <Image iconType="3" name="/img/icons8-gravidade-64.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Calculadora de Peso Gravitacional"/>
+            <Property name="horizontalTextPosition" type="int" value="0"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabelNomePeso">

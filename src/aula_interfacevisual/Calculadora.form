@@ -150,6 +150,7 @@
               <Image iconType="3" name="/img/icons8-calculadora-50.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Calculadora Gen&#xe9;rica"/>
+            <Property name="horizontalTextPosition" type="int" value="0"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabelNumero01">

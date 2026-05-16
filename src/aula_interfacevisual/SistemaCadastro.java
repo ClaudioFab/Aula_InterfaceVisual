@@ -73,6 +73,7 @@ public class SistemaCadastro extends javax.swing.JFrame {
         jLabelNomeCadastroFun.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabelNomeCadastroFun.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/icons8-cadastro-60.png"))); // NOI18N
         jLabelNomeCadastroFun.setText("Cadastro de Funcionário");
+        jLabelNomeCadastroFun.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
         javax.swing.GroupLayout jPanelCentralLayout = new javax.swing.GroupLayout(jPanelCentral);
         jPanelCentral.setLayout(jPanelCentralLayout);

@@ -43,6 +43,7 @@ public class ComboBox extends javax.swing.JFrame {
         jLabelNomeComboBox.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabelNomeComboBox.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/icons8-caixa-50.png"))); // NOI18N
         jLabelNomeComboBox.setText("Trabalhando com Combo Box");
+        jLabelNomeComboBox.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
         txfProdutoSelecionado.setEditable(false);
         txfProdutoSelecionado.setBackground(new java.awt.Color(0, 0, 0));
